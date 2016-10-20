@@ -6,7 +6,14 @@
 
 //}
 
-
+var mouseBool = false;
+var firstBool = false;
+var secondBool = false;
+var thirdBool = false;
+var fourthBool = false;
+var death = false;
+var win = false;
+var retry = false;
 
 
 
@@ -24,6 +31,10 @@ function middleButton() {
 
 }
 
+function mousePressed() {
+    mouseBool = true;
+
+}
 
 
 function introScreen() {
@@ -41,7 +52,7 @@ function introScreen() {
     fill(0);
     text("Huh, where am I?", 377, 323);
     textSize(20);
-    text("Press 'q' to continue.",377,346);
+    text("Press 'q' to continue.", 377, 346);
 
     for (var i = 0; i < width; i = i + 30) {
         for (var j = 0; j < height / 3; j = j + 30) {
@@ -81,6 +92,28 @@ function introScreen() {
 
         }
     }
+    firstBool = true;
+
+    if (key == 'q') {
+        secondBool = true;
+        firstBool = false;
+
+    }
+
+    /* if (mouseBool == true) {
+         if ((mouseX > 375 && mouseX < 575) && (mouseY > 300 && mouseY < 350)) {
+             secondBool = true;
+             mouseBool = false;
+             firstBool = false;
+             println("gah");
+             retry = false;
+
+         }
+         
+     }*/
+
+
+
 }
 
 function secondScreen() {
@@ -98,13 +131,42 @@ function secondScreen() {
     fill(255);
     text("Go left", 210, 323);
     textSize(20);
-    text("Press 'z' to continue",160,346);
+    text("Press 'z' to continue", 160, 346);
 
     textSize(25);
     fill(255);
     text("Go right", 650, 323);
     textSize(20);
-    text("Press 'x' to continue",610,346);
+    text("Press 'x' to continue", 610, 346);
+
+    secondBool = true;
+    /* if (mouseBool == true) {
+         if ((mouseX > 150 && mouseX < 350) && (mouseY > 300 && mouseY < 350)) {
+             thirdBool = true;
+             thirdScreen();
+             mouseBool = false;
+             println("asdf");
+             secondBool = false;
+         }
+         if ((mouseX > 600 && mouseX < 800) && (mouseY > 300 && mouseY < 350)) {
+             deathScreen();
+             secondBool = false;
+             thirdBool = false;
+             mouseBool = false;
+             println("second to third screen death");
+             death = true;
+
+         }
+     }*/
+
+    if (key == 'z') {
+        secondBool = false;
+        thirdBool = true;
+    } else if (key == 'x') {
+        death = true;
+        secondBool = false;
+    }
+
 }
 
 function thirdScreen() {
@@ -121,12 +183,32 @@ function thirdScreen() {
     textSize(25); //die
     text("Fetch water", 180, 323);
     textSize(20);
-    text("Press 'o' to continue",160,346);
-    
+    text("Press 'o' to continue", 160, 346);
+
     textSize(23); //correct
     text("Start on fire signal", 610, 322);
     textSize(20);
-    text("Press 'p' to continue",610,346);
+    text("Press 'p' to continue", 610, 346);
+
+    thirdBool = true;
+    /* if ((mouseX > 150 && mouseX < 350) && (mouseY > 300 && mouseY < 350)) {
+         if (mouseBool == true) {
+             thirdBool = false;
+             mouseBool = false;
+             death = true;
+             firstBool = false;
+             secondBool = false;
+         }
+     }*/
+
+    if (key == 'o') {
+        death = true;
+        thirdBool = false;
+    } else if (key == 'p') {
+        thirdBool = false;
+        fourthBool = true;
+    }
+
 
 }
 
@@ -140,22 +222,34 @@ function fourthScreen() {
     fill(0);
     text("The fire teepee is still in construction", 100, 100);
     text("Out in the distance...ALAS A SHIP!!!!", 100, 200);
-    
-  
+
+
 
     textSize(18);
     fill(0);
     text("Go hunt for more wood", 158, 323);
-    text("Press 'b' to continue",158,346)
-    
+    text("Press 'b' to continue", 158, 346)
+
     text("Try to light signal fire", 390, 323);
-    text("Press 'n' to continue",390,346);
-    
+    text("Press 'n' to continue", 390, 346);
+
     textSize(17);
     text("Chill out b/c probably", 620, 315);
     text("another boat will come", 620, 330);
     textSize(15);
-    text("Press 'm' to continue",620,347);
+    text("Press 'm' to continue", 620, 347);
+
+    fourthBool = true;
+    if (key == 'b') {
+        death = true;
+        fourthBool = false;
+    } else if (key == 'n') {
+        win = true;
+        fourthBool = false;
+    } else if (key == 'm') {
+        death=true;
+        fourthBool=false;
+    }
 
 }
 
@@ -164,8 +258,10 @@ function victoryScreen() {
     background(0);
     textSize(50);
     fill(255);
-    text("You've been spotted and saved!",150,250);
-    
+    text("You've been spotted and saved!", 150, 250);
+
+    win = true;
+
 }
 
 function deathScreen() {
@@ -199,13 +295,32 @@ function deathScreen() {
 
         }
     }
+
+    death = true;
+    /*if (mouseBool == true) {
+        if ((mouseX > 375 && mouseX < 575) && (mouseY > 300 && mouseY < 350)) {
+
+            death = false;
+            println("death to first screen");
+            retry = true;
+            mouseBool = false;
+            firstBool = false;
+        }
+
+    }*/
+
+    if (key == 'r') {
+        death = false;
+        firstBool = true;
+    }
+
 }
 
 //function mousePressed() {
-//    println("fuck");
+//    
 //    
 //        secondScreen();
-//        println("wtf");
+//        println("ugh");
 //
 //    } 
 //    if ((mouseX > 150 && mouseX < 350) && (mouseY > 300 && mouseY < 350)) {
@@ -238,6 +353,8 @@ function deathScreen() {
 
 
 
+
+
 //    function mousePressed_2() {
 //        if ((mouseX > 150 && mouseX < 350) && (mouseY > 300 && mouseY < 350)) {
 //            thirdScreen();
@@ -255,19 +372,10 @@ function keyPressed() {
 }
 
 
-//function mousePressed() {
-//
-//}
-
 
 
 function setup() {
     introScreen();
-    //    if (mousePressed() == true) {
-    //        secondScreen();
-    //        
-    //
-    //    }
 
 
 }
@@ -291,35 +399,28 @@ function setup() {
 //    }
 
 function draw() {
-    if (key == 'q') {
-        secondScreen();
 
-    }
 
-    if (key == 'z') {
-        thirdScreen();
-    } else if (key == 'x') {
-        deathScreen();
-    }
-    
-    if(key=='r'){
+    if (firstBool == true) {
         introScreen();
-    }
-    
-    if(key=='o'){
-        deathScreen();
-    }
-    else if(key=='p'){
+        println("test");
+    } else if (secondBool == true) {
+        secondScreen();
+        println("draw second");
+    } else if (thirdBool == true) {
+        thirdScreen();
+
+    } else if (fourthBool == true) {
         fourthScreen();
-    }
-    
-    if(key=='b'){
+    } else if (death == true) {
         deathScreen();
-    }
-    else if(key=='n'){
+    } else if (win == true) {
         victoryScreen();
+    } else if (retry == true) {
+        introScreen();
+        println("retry");
+
+
     }
-    else if(key=='m'){
-        deathScreen();
-    }
+
 }
