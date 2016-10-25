@@ -6,6 +6,8 @@
 
 //}
 
+var img;
+
 var mouseBool = false;
 var firstBool = false;
 var secondBool = false;
@@ -214,7 +216,7 @@ function thirdScreen() {
 
 function fourthScreen() {
     createCanvas(1000, 500); //insert pic as background
-    background(255);
+    background(img);
     leftButton();
     rightButton();
     middleButton();
@@ -222,8 +224,8 @@ function fourthScreen() {
     fill(0);
     text("The fire teepee is still in construction", 100, 100);
     text("Out in the distance...ALAS A SHIP!!!!", 100, 200);
-
-
+   
+    
 
     textSize(18);
     fill(0);
@@ -376,6 +378,7 @@ function keyPressed() {
 
 function setup() {
     introScreen();
+    img=loadImage("images/beach.jpg");
 
 
 }
@@ -411,7 +414,9 @@ function draw() {
         thirdScreen();
 
     } else if (fourthBool == true) {
+    
         fourthScreen();
+        
     } else if (death == true) {
         deathScreen();
     } else if (win == true) {
