@@ -9,6 +9,8 @@ var hihat = false;
 var crash = false;
 var tom = false;
 var floorTom = false;
+var tom_2 = false;
+var ride = false;
 var metronome;
 var sKick;
 var sSnare;
@@ -16,15 +18,19 @@ var sHiHat;
 var sCrash;
 var sTom;
 var sFloorTom;
+var sTomTwo;
+var sRide;
 
 function preload() {
     metronome = loadSound("sounds/metronome.mp3");
     sKick = loadSound("sounds/kick.wav");
-    sSnare=loadSound("sounds/snare.wav");
-    sHiHat=loadSound("sounds/hihat.wav");
-    sCrash=loadSound("sounds/crash.wav");
-    sTom=loadSound("sounds/tom.wav");
-    sFloorTom=loadSound("sounds/floorTom.wav");
+    sSnare = loadSound("sounds/snare.wav");
+    sHiHat = loadSound("sounds/hihat.wav");
+    sCrash = loadSound("sounds/crash.wav");
+    sTom = loadSound("sounds/tom.wav");
+    sFloorTom = loadSound("sounds/floorTom.wav");
+    sTomTwo = loadSound("sounds/tom-2.wav");
+    sRide = loadSound("sounds/ride.wav");
 }
 
 function setup() {
@@ -43,11 +49,11 @@ function setup() {
 
 function draw() {
 
-    background(0, 120, 255);
+    background(255,110,124);
 
     textSize(32);
     fill(255);
-    text("Press any key in the word 'qwerty' to start", 300, 100);
+    text("Press any key in the word 'WERTYUIO' to start", 250, 100);
 
 
     noStroke();
@@ -63,7 +69,7 @@ function draw() {
     ballArray[5].animateBall();
 
     keyIsPressed;
-    //q
+    //o
     if (kick == true) {
         fill(0);
         rect(0, 0, 1200, 700);
@@ -93,13 +99,19 @@ function draw() {
     //t
     if (tom == true) {
         noStroke();
-        fill(255);
-        triangle((width / 2) - 50, 300, (width / 2) + 50, 300, width / 2, 500);
+        fill(random(0,255),125,125);
+        triangle((width / 2) - 50, 400, (width / 2) + 50, 400, width / 2, 700);
+        triangle((width / 2) - 50, 400, (width / 2) + 50, 400, width / 2, 100);
+        fill(125,random(0,255),125);
         triangle((width / 2) - 250, 300, (width / 2) - 150, 300, width / 2 - 200, 500);
-        triangle((width / 2) + 150, 300, (width / 2) + 250, 300, width / 2 + 200, 500);
+        triangle((width / 2) - 250, 300, (width / 2) - 150, 300, width / 2 - 200, 100);
+        fill(125,125,random(0,255));
+        triangle((width / 2) + 150, 300, (width / 2) + 250, 300, width / 2 + 200, 400);
+        triangle((width / 2) + 150, 300, (width / 2) + 250, 300, width / 2 + 200, 200);
 
     }
 
+    //u
     if (floorTom == true) {
         translate(width / 2, height / 2);
         fill(random(0, 255));
@@ -111,14 +123,26 @@ function draw() {
         }
     }
 
+    //y
+    if(tom_2==true){
+        rect(width/2-50,0,random(30,90),height);
+        rect(0,height/2-50,width,random(20,100));
+    }
+    
+    //i
+    if(ride==true){
+        for (var i = 0; i<width; i=i+30){
+            fill(i/2,255-i/4,i/3);
+            rect(i,0,15,height);
+        }
+    }
 
 }
 
 function keyPressed() {
-    //q
-    if (keyCode == 81) {
+    //o
+    if (keyCode == 79) {
         kick = true;
-        println("fiasdfas");
         sKick.play();
     }
 
@@ -126,7 +150,6 @@ function keyPressed() {
     if (keyCode == 87) {
         fill(255);
         snare = true;
-        println("testing");
         sSnare.play();
     }
 
@@ -152,15 +175,32 @@ function keyPressed() {
 
     //y
     if (keyCode == 89) {
+        tom_2 = true;
+        sTomTwo.play();
+
+
+
+    }
+
+    //u
+    if (keyCode == 85) {
         floorTom = true;
         sFloorTom.play();
+
+    }
+
+
+    //i
+    if (keyCode == 73) {
+        ride = true;
+        sRide.play();
 
     }
 }
 
 function keyReleased() {
     //this is made so that when the key is released, it returns to the background color
-    background(0, 120, 255);
+    background(255,110,124);
 
     if (kick == true) {
         kick = false;
@@ -174,6 +214,10 @@ function keyReleased() {
         tom = false;
     } else if (floorTom == true) {
         floorTom = false;
+    } else if (tom_2 ==true){
+        tom_2=false;
+    } else if (ride == true){
+        ride=false;
     }
 
 }
