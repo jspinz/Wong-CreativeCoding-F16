@@ -1,0 +1,161 @@
+
+
+{
+    "football": [
+        {
+            "Team": "MIN",
+            "Team_name": "Vikings",
+            "Team_city": "Minneapolis",
+            "arrest_count": "17"
+}, {
+            "Team": "DEN",
+            "Team_name": "Broncos",
+            "Team_city": "Denver",
+            "arrest_count": "12"
+}, {
+            "Team": "TB",
+            "Team_name": "Buccaneers",
+            "Team_city": "Tampa Bay",
+            "arrest_count": "11"
+}, {
+            "Team": "SF",
+            "Team_name": "49ers",
+            "Team_city": "San Francisco",
+            "arrest_count": "10"
+}, {
+            "Team": "SEA",
+            "Team_name": "Seahawks",
+            "Team_city": "Seattle",
+            "arrest_count": "10"
+}, {
+            "Team": "CHI",
+            "Team_name": "Bears",
+            "Team_city": "Chicago",
+            "arrest_count": "10"
+}, {
+            "Team": "SD",
+            "Team_name": "Chargers",
+            "Team_city": "San Diego",
+            "arrest_count": "9"
+}, {
+            "Team": "CIN",
+            "Team_name": "Bengals",
+            "Team_city": "Cincinatti",
+            "arrest_count": "9"
+}, {
+            "Team": "KC",
+            "Team_name": "Chiefs",
+            "Team_city": "Kansas City",
+            "arrest_count": "9"
+}, {
+            "Team": "TEN",
+            "Team_name": "Titans",
+            "Team_city": "Nashville",
+            "arrest_count": "8"
+}, {
+            "Team": "WAS",
+            "Team_name": "Redskins",
+            "Team_city": "Washington DC",
+            "arrest_count": "8"
+}, {
+            "Team": "IND",
+            "Team_name": "Colts",
+            "Team_city": "Indianapolis",
+            "arrest_count": "8"
+}, {
+            "Team": "CLE",
+            "Team_name": "Browns",
+            "Team_city": "Cleveland",
+            "arrest_count": "7"
+}, {
+            "Team": "MIA",
+            "Team_name": "Dolphins",
+            "Team_city": "Miami",
+            "arrest_count": "7"
+}, {
+            "Team": "BAL",
+            "Team_name": "Ravens",
+            "Team_city": "Baltimore",
+            "arrest_count": "7"
+}, {
+            "Team": "NO",
+            "Team_name": "Saints",
+            "Team_city": "New Orleans",
+            "arrest_count": "7"
+}, {
+            "Team": "CAR",
+            "Team_name": "Panthers",
+            "Team_city": "Charlotte",
+            "arrest_count": "6"
+}, {
+            "Team": "OAK",
+            "Team_name": "Raiders",
+            "Team_city": "Oakland",
+            "arrest_count": "6"
+}, {
+            "Team": "JAC",
+            "Team_name": "Jaguars",
+            "Team_city": "Jacksonville",
+            "arrest_count": "6"
+}, {
+            "Team": "LA",
+            "Team_name": "Rams",
+            "Team_city": "Los Angeles",
+            "arrest_count": "5"
+}, {
+            "Team": "DET",
+            "Team_name": "Lions",
+            "Team_city": "Detroit",
+            "arrest_count": "5"
+}, {
+            "Team": "ATL",
+            "Team_name": "Falcons",
+            "Team_city": "Atlanta",
+            "arrest_count": "4"
+}, {
+            "Team": "BUF",
+            "Team_name": "Buffalo Bills",
+            "Team_city": "Buffalo",
+            "arrest_count": "4"
+}, {
+            "Team": "HOU",
+            "Team_name": "Texans",
+            "Team_city": "Houston",
+            "arrest_count": "4"
+}, {
+            "Team": "ARI",
+            "Team_name": "Cardinals",
+            "Team_city": "Phoenix",
+            "arrest_count": "4"
+}, {
+            "Team": "NE",
+            "Team_name": "Patriots",
+            "Team_city": "Boston",
+            "arrest_count": "3"
+}, {
+            "Team": "DAL",
+            "Team_name": "Cowboys",
+            "Team_city": "Dallas",
+            "arrest_count": "3"
+}, {
+            "Team": "NYG",
+            "Team_name": "NY Giants",
+            "Team_city": "New York",
+            "arrest_count": "3"
+}, {
+            "Team": "NYJ",
+            "Team_name": "Jets",
+            "Team_city": "New York",
+            "arrest_count": "3"
+}, {
+            "Team": "PIT",
+            "Team_name": "Steelers",
+            "Team_city": "Pittsburgh",
+            "arrest_count": "2"
+}, {
+            "Team": "GB",
+            "Team_name": "Packers",
+            "Team_city": "Green Bay",
+            "arrest_count": "2"
+}]
+}
