@@ -42,7 +42,7 @@ function draw() {
     //    image(capture, 0, 0, 800, 600);
     capture.loadPixels();
     loadPixels();
-    for (var y = 0; y < capture.height; y++) {
+    for (var y = 0; y < capture.height; y+=1) {
         for (var x = 0; x < capture.width; x++) {
             var index = (x + y * capture.width) * 4;
             //            var index=(capture.width - x + 1 + (y * capture.width))*4
@@ -51,8 +51,8 @@ function draw() {
             var b = capture.pixels[index + 2];
             var current=color(r,g,b);
 //            console.log(current);
-            var skinToneMin=color(100,140,120);
-            var skinToneMax=color(160,100,80);
+            var skinToneMin=color(150,140,120);
+            var skinToneMax=color(160,120,100);
             var eyesMin=color(70,70,70);
             var eyesMax=color(80,80,80);
             var hairMin=color(0);
@@ -65,19 +65,19 @@ function draw() {
 //                fill(195,0,130);
 //            }
             if(current==color(0)){
-                fill(0);
+                fill(current);
             }else{
-                fill(195,0,130);
+                fill(random(100,255),0,random(100,200));
             }
             if(skinToneMin<current && skinToneMax>current){
                 fill(current);
             }else{
-                fill(195,0,130);
+                fill(random(100,255),0,random(100,200));
             }
             if(hairMin<current&&hairMax>current){
                 fill(current);
             }else{
-                fill(195,0,130);
+                fill(random(100,255),0,random(100,200));
             }
             
             
