@@ -1,40 +1,14 @@
-//var video;
-//
-//function setup() {
-//    createCanvas(320, 240);
-//    pixelDensity(1);
-//    video = createCapture(VIDEO);
-//    video.size(320,240);
-//
-//}
-//
-//function draw() {
-//    background(51);
-//    video.loadPixels();
-//    loadPixels();
-//    for (var y = 0; y < height; y++) {
-//        for (var x = 0; x < width; x++) {
-//            var index = (x + y * width) * 4;
-//            pixels[index + 0] = video.pixels[index];
-//            pixels[index + 1] = video.pixels[index];
-//            pixels[index + 2] = video.pixels[index];
-//            pixels[index + 3] = 255;
-//       }
-//    }
-//    updatePixels();
-//
-//}
 var capture;
 var vScale = 8; //scale of video we want to take from
 
 function setup() {
     createCanvas(800, 600);
-    pixelDensity(1);
+    pixelDensity(1);//for retina displays
     capture = createCapture(VIDEO);
     capture.size(width / vScale, height / vScale);
     capture.hide();
 
-    //for retina displays
+    
 }
 
 function draw() {
@@ -88,6 +62,8 @@ function draw() {
         }
     }
 }
+
+//trying to implement perfect hexagon grid background but image wont display for some reason when pushed
 //background(102);
 
 //    for (var x = 0; x < width + w; x += (w * cos(PI / 6) * 2)) {
