@@ -19,7 +19,7 @@ function draw() {
     for (var y = 0; y < capture.height; y+=1) {
         for (var x = 0; x < capture.width; x++) {
             var index = (x + y * capture.width) * 4;
-            //            var index=(capture.width - x + 1 + (y * capture.width))*4
+            //            var index=(capture.width - x + 1 + (y * capture.width))*4  
             var r = capture.pixels[index + 0];
             var g = capture.pixels[index + 1];
             var b = capture.pixels[index + 2];
@@ -38,6 +38,8 @@ function draw() {
 //            }else{
 //                fill(195,0,130);
 //            }
+            
+            //color test to display
             if(current==color(0)){
                 fill(current);
             }else{
